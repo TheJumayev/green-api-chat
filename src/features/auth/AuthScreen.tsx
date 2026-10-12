@@ -132,6 +132,7 @@ export function AuthScreen({ onAuthenticated, theme, onToggleTheme }: AuthScreen
                 value={draft.apiUrl}
                 onChange={(e) => update('apiUrl')(e.target.value)}
                 error={errors.apiUrl}
+                hint={ru.auth.apiUrlHint}
                 placeholder={DEFAULT_API_URL}
                 autoComplete="off"
                 spellCheck={false}

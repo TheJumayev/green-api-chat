@@ -8,6 +8,8 @@ export const ru = {
     idInstance: 'ID Instance',
     apiToken: 'API Token Instance',
     apiUrl: 'Адрес API',
+    apiUrlHint:
+      'У каждого инстанса свой, см. личный кабинет: например https://7103.api.greenapi.com',
     advanced: 'Дополнительно',
     submit: 'Войти',
     checking: 'Проверяем…',
