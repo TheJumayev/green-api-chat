@@ -16,15 +16,9 @@ interface MessageListProps {
 export function MessageList({ messages, onRetry }: MessageListProps) {
   const ref = useAutoScroll<HTMLDivElement>(messages.length);
 
-  if (messages.length === 0) {
-    return (
-      <div className={styles.messageList}>
-        <EmptyState icon={<ChatIcon size={28} />} title={ru.chat.emptyMessages} />
-      </div>
-    );
-  }
-
   return (
+    // Контейнер остаётся на месте и когда сообщений нет: иначе область
+    // aria-live создаётся только с первым сообщением и оно не объявляется.
     <div
       className={styles.messageList}
       ref={ref}
@@ -33,6 +27,10 @@ export function MessageList({ messages, onRetry }: MessageListProps) {
       aria-relevant="additions"
       aria-label="Сообщения"
     >
+      {messages.length === 0 && (
+        <EmptyState icon={<ChatIcon size={28} />} title={ru.chat.emptyMessages} />
+      )}
+
       <div className={styles.messageListInner}>
         {messages.map((message, index) => {
           const previous = messages[index - 1];

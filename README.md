@@ -36,7 +36,7 @@
 | UI        | React 19, CSS Modules, без UI-библиотек          |
 | Состояние | Context + useReducer                             |
 | Хранение  | localStorage (учётные данные и история)          |
-| Тесты     | Vitest + Testing Library — 24 теста              |
+| Тесты     | Vitest — 24 юнит-теста; Playwright — 10 e2e-сценариев              |
 | Качество  | ESLint, Prettier, `tsc --noEmit`, GitHub Actions |
 
 Зависимостей в рантайме ровно две: `react` и `react-dom`.
@@ -59,7 +59,8 @@ npm run dev
 ```bash
 npm run build      # typecheck + production-сборка в dist/
 npm run preview    # посмотреть собранную версию
-npm run test       # прогнать тесты
+npm run test       # юнит-тесты (Vitest)
+npm run test:e2e   # e2e-сценарии (Playwright, dev-сервер поднимется сам)
 npm run lint       # ESLint
 npm run typecheck  # tsc --noEmit
 ```

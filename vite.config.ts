@@ -27,5 +27,7 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
     css: false,
+    // e2e/ запускается Playwright'ом, Vitest их не трогает.
+    include: ['src/**/*.{test,spec}.{ts,tsx}'],
   },
 });
