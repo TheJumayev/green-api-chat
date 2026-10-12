@@ -1,0 +1,145 @@
+/*
+ * Дизайн-токены.
+ * Значения сняты с реального интерфейса web.max.ru (тема "space"),
+ * чтобы интерфейс совпадал с прототипом из задания.
+ */
+
+:root {
+  /* Типографика */
+  --font: -apple-system, system-ui, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+  --fs-title: 20px;
+  --lh-title: 24px;
+  --fs-subtitle: 17px;
+  --lh-subtitle: 22px;
+  --fs-body: 15px;
+  --lh-body: 20px;
+  --fs-secondary: 13px;
+  --lh-secondary: 18px;
+  --fs-caption: 12px;
+  --lh-caption: 16px;
+
+  /* Отступы */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+
+  /* Радиусы — из MAX */
+  --r-xs: 4px;
+  --r-s-half: 6px;
+  --r-s: 8px;
+  --r-m-half: 10px;
+  --r-m: 12px;
+  --r-l: 16px;
+  --r-xl: 20px;
+  --r-full: 999px;
+
+  --r-bubble: 16px;
+  --r-bubble-stack: 6px;
+  --r-btn-lg: 16px;
+  --r-btn-md: 12px;
+  --r-btn-sm: 10px;
+
+  /* Размеры */
+  --sidebar-w: 336px;
+  --header-h: 56px;
+  --composer-min-h: 56px;
+  --bubble-max-w: min(560px, 72%);
+  --avatar-sm: 32px;
+  --avatar-md: 40px;
+  --avatar-lg: 48px;
+
+  /* Движение */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+
+  /* Тени */
+  --shadow-card: 0 8px 32px #00000040;
+  --shadow-pop: 0 4px 16px #0000002e;
+
+  /* Акценты — одинаковы в обеих темах */
+  --accent: #007aff;
+  --positive: #2bc644;
+  --negative: #ce4257;
+}
+
+/* ---------- Тёмная тема (по умолчанию) ---------- */
+:root,
+:root[data-theme='dark'] {
+  --bg-surface: #0f0f12;
+  --bg-primary: #17181c;
+  --bg-secondary: #25262d;
+  --bg-card: #25262d;
+  --bg-tertiary: #ffffff17;
+  --bg-overlay: #0d0d0da3;
+  --bg-accent-fade: #007aff29;
+
+  --text-primary: #ffffff;
+  --text-secondary: #ffffffcc;
+  --text-tertiary: #ffffffa3;
+  --text-on-accent: #ffffff;
+
+  --icon-primary: #ffffff;
+  --icon-secondary: #ffffffad;
+  --icon-tertiary: #ffffff85;
+  --icon-mute: #ffffff5c;
+
+  --btn-secondary-bg: #434455;
+  --btn-secondary-fg: #ffffff;
+
+  --stroke-subtle: #ffffff1a;
+  --stroke-strong: #ffffff33;
+
+  --bubble-in-bg: var(--bg-secondary);
+  --bubble-in-fg: var(--text-primary);
+  --bubble-out-bg: var(--accent);
+  --bubble-out-fg: #ffffff;
+  --bubble-out-meta: #ffffffb8;
+
+  color-scheme: dark;
+}
+
+/* ---------- Светлая тема ---------- */
+:root[data-theme='light'] {
+  --bg-surface: #edeef2;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f7fa;
+  --bg-card: #ffffff;
+  --bg-tertiary: #20366e0d;
+  --bg-overlay: #0000005c;
+  --bg-accent-fade: #007aff1f;
+
+  --text-primary: #060708;
+  --text-secondary: #060708ad;
+  --text-tertiary: #06070885;
+  --text-on-accent: #ffffff;
+
+  --icon-primary: #060708d6;
+  --icon-secondary: #060708ad;
+  --icon-tertiary: #06070885;
+  --icon-mute: #0607085c;
+
+  --btn-secondary-bg: #e9ebf1;
+  --btn-secondary-fg: #060708;
+
+  --stroke-subtle: #0000000d;
+  --stroke-strong: #0000001a;
+
+  --bubble-in-bg: #ffffff;
+  --bubble-in-fg: var(--text-primary);
+  --bubble-out-bg: var(--accent);
+  --bubble-out-fg: #ffffff;
+  --bubble-out-meta: #ffffffcc;
+
+  --shadow-card: 0 8px 32px #20366e1f;
+  --shadow-pop: 0 4px 16px #20366e14;
+
+  color-scheme: light;
+}
