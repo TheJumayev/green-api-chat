@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: var(--sidebar-w) 1fr;
   height: 100%;
-  background: var(--bg-primary);
+  background: var(--chat-bg);
 }
 
 @media (max-width: 1023px) {
@@ -32,7 +32,7 @@
   flex-direction: column;
   min-width: 0;
   border-right: 1px solid var(--stroke-subtle);
-  background: var(--bg-surface);
+  background: var(--sidebar-bg);
 }
 
 .sidebarHeader {
@@ -203,7 +203,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  background: var(--bg-primary);
+  background: var(--chat-bg);
 }
 
 .chatHeader {
@@ -260,7 +260,7 @@
 .messageListInner {
   width: 100%;
   max-width: 920px;
-  margin: 0 auto;
+  margin: auto auto 0;
   display: flex;
   flex-direction: column;
 }
@@ -317,6 +317,7 @@
 .bubbleIn {
   background: var(--bubble-in-bg);
   color: var(--bubble-in-fg);
+  box-shadow: var(--bubble-in-shadow);
   border-bottom-left-radius: var(--r-bubble-stack);
 }
 

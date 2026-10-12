@@ -6,6 +6,21 @@
 Интерфейс построен по прототипу [web.max.ru](https://web.max.ru): цветовые токены,
 радиусы и типографика сняты с реального интерфейса MAX, светлая и тёмная темы.
 
+![Чат, тёмная тема](docs/screenshots/chat-dark.png)
+
+---
+
+## Скриншоты
+
+| Тёмная тема | Светлая тема |
+|---|---|
+| ![Чат, тёмная тема](docs/screenshots/chat-dark.png) | ![Чат, светлая тема](docs/screenshots/chat-light.png) |
+| ![Вход, тёмная тема](docs/screenshots/auth-dark.png) | ![Вход, светлая тема](docs/screenshots/auth-light.png) |
+
+| Новый чат | Мобильная вёрстка |
+|---|---|
+| ![Диалог нового чата](docs/screenshots/new-chat.png) | <img src="docs/screenshots/mobile-chat.png" width="260" alt="Чат на мобильном"> |
+
 ---
 
 ## Что внутри

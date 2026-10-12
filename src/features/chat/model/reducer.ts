@@ -35,7 +35,6 @@ export const initialChatState: ChatState = {
 };
 
 export type ChatAction =
-  | { type: 'hydrate'; state: Pick<ChatState, 'chats' | 'messages'> }
   | { type: 'openChat'; chatId: string; name?: string }
   | { type: 'selectChat'; chatId: string | null }
   | { type: 'messageQueued'; message: Message }
@@ -102,9 +101,6 @@ function patchMessage(
 
 export function chatReducer(state: ChatState, action: ChatAction): ChatState {
   switch (action.type) {
-    case 'hydrate':
-      return { ...state, chats: action.state.chats, messages: action.state.messages };
-
     case 'openChat': {
       const at = state.chats[action.chatId]?.lastMessageAt ?? Math.floor(Date.now() / 1000);
       return {

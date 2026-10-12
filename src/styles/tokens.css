@@ -97,8 +97,13 @@
   --stroke-subtle: #ffffff1a;
   --stroke-strong: #ffffff33;
 
-  --bubble-in-bg: var(--bg-secondary);
+  /* Семантика поверхностей чата: держим их разными, иначе пузырь сливается с фоном. */
+  --sidebar-bg: #0f0f12;
+  --chat-bg: #17181c;
+
+  --bubble-in-bg: #25262d;
   --bubble-in-fg: var(--text-primary);
+  --bubble-in-shadow: none;
   --bubble-out-bg: var(--accent);
   --bubble-out-fg: #ffffff;
   --bubble-out-meta: #ffffffb8;
@@ -132,8 +137,12 @@
   --stroke-subtle: #0000000d;
   --stroke-strong: #0000001a;
 
+  --sidebar-bg: #ffffff;
+  --chat-bg: #edeef2;
+
   --bubble-in-bg: #ffffff;
   --bubble-in-fg: var(--text-primary);
+  --bubble-in-shadow: 0 1px 2px #20366e1f;
   --bubble-out-bg: var(--accent);
   --bubble-out-fg: #ffffff;
   --bubble-out-meta: #ffffffcc;

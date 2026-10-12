@@ -1,13 +1,25 @@
-import { useCallback, useEffect, useMemo, useReducer, useRef, type ReactNode } from 'react';
+import { useCallback, useEffect, useMemo, useReducer, type ReactNode } from 'react';
 import { MAX_MESSAGE_LENGTH, sendMessage } from '@/api/greenApi';
 import type { Credentials } from '@/api/types';
 import { useNotifications } from '@/hooks/useNotifications';
 import { ChatContext, type ChatContextValue } from './context';
-import { chatReducer, initialChatState, type Message } from './reducer';
+import { chatReducer, initialChatState, type ChatState, type Message } from './reducer';
 import { loadHistory, saveHistory } from './persist';
 
 function localId(): string {
   return `local-${crypto.randomUUID()}`;
+}
+
+/**
+ * История читается лениво, при создании редьюсера.
+ *
+ * Через эффект это делать нельзя: эффект сохранения успевает записать пустое
+ * состояние раньше, чем применится восстановленное, и в StrictMode второй
+ * проход читает уже затёртое хранилище.
+ */
+function init(): ChatState {
+  const saved = loadHistory();
+  return saved ? { ...initialChatState, ...saved } : initialChatState;
 }
 
 export function ChatProvider({
@@ -17,19 +29,9 @@ export function ChatProvider({
   credentials: Credentials;
   children: ReactNode;
 }) {
-  const [state, dispatch] = useReducer(chatReducer, initialChatState);
-  const hydrated = useRef(false);
+  const [state, dispatch] = useReducer(chatReducer, undefined, init);
 
-  // Восстановление истории — один раз на монтирование.
   useEffect(() => {
-    const saved = loadHistory();
-    if (saved) dispatch({ type: 'hydrate', state: saved });
-    hydrated.current = true;
-  }, []);
-
-  // Сохраняем только после гидратации, иначе затрём историю пустым состоянием.
-  useEffect(() => {
-    if (!hydrated.current) return;
     saveHistory(state);
   }, [state]);
 
