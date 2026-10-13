@@ -4,6 +4,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+  // На GitHub Pages сайт живёт в подпапке, поэтому базовый путь задаётся
+  // переменной окружения при сборке. Локально и на Vercel остаётся '/'.
+  base: process.env.VITE_BASE ?? '/',
   plugins: [react()],
   resolve: {
     alias: {
