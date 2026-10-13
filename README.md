@@ -148,8 +148,12 @@ HTTP API и Webhook Endpoint, а вебхук требует собственн�
 
 ### CORS
 
-По умолчанию браузер обращается к GREEN-API напрямую. Если в вашем окружении
-запросы блокируются CORS, включите dev-прокси:
+GREEN-API отдаёт CORS-заголовки, поэтому браузер обращается к нему напрямую,
+без прокси. Проверено на развёрнутой версии: `getStateInstance`, `setSettings`,
+`sendMessage`, `receiveNotification` и `deleteNotification` проходят, включая
+preflight для POST и DELETE.
+
+Если в каком-то окружении запросы всё же заблокируют, есть запасной dev-прокси:
 
 ```bash
 # .env.local
